@@ -1,0 +1,141 @@
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0f172a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.header {
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 1rem;
+}
+
+.search-box {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+input {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: white;
+  width: 300px;
+}
+
+button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  background: #64748b;
+  cursor: not-allowed;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: #1e293b;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: left;
+  border: 1px solid #334155;
+  transition: border-color 0.2s;
+}
+
+.product-card:hover {
+  border-color: #3b82f6;
+}
+
+.product-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #60a5fa;
+  margin-bottom: 1rem;
+}
+
+.checkout-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.checkout-modal {
+  background: #1e293b;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 400px;
+  border: 1px solid #334155;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.status-open { background: #1e3a8a; color: #93c5fd; }
+.status-completed { background: #064e3b; color: #6ee7b7; }
