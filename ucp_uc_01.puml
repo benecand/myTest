@@ -6,8 +6,9 @@ title Discovery
 
 actor "AI Agent" as Client
 rectangle "UCP Server" {
-    usecase "Get Business Capabilities" as UC1
+    usecase "Get Business Capabilities\n(/.well-known/ucp)" as UC1
 }
 Client --> UC1: "Request Business Capabilities"
+
 
 @enduml
