@@ -1,0 +1,18 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+title Apply Discount
+actor "AI Agent" as Client
+actor "eStore Backend" as Backend
+rectangle "UCP Server" {
+    usecase "Update Checkout Session" as UC1
+    usecase "Apply Discount" as UC2
+}
+Client --> UC1: "1. Request Checkout update"
+note on link
+  - discounts (promotion codes)
+end note
+UC2 .> UC1 : <<extend>>
+
+UC1 --> Backend: "2. Validate & Calculate discount"
+@enduml

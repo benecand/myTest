@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+title Payment
+actor "AI Agent" as Client
+
+rectangle "PSP" as PSP{
+    usecase "Acquire Payment Token" as UC1
+    usecase "Process Payment" as UC3
+}
+
+rectangle "UCP Server" {
+    usecase "Complete Checkout" as UC2
+}
+
+Client --> UC1: "1. Request Token"
+Client --> UC2: "2. Complete Checkout with Payment Instrument"
+note on link
+  - payment_data (with Token)
+end note
+UC2 --> UC3: "3. Request Settlement"
+
+@enduml

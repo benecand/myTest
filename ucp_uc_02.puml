@@ -1,0 +1,15 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+title Create Checkout
+actor "AI Agent" as Client
+actor "eStore Backend" as Backend
+rectangle "UCP Server" {
+    usecase "Create Checkout Session" as UC1
+}
+Client --> UC1: "1. Request Checkout creation"
+note on link
+  - line_items (array of products)
+end note
+UC1 --> Backend: "2. Validate cart & Get pricing"
+@enduml

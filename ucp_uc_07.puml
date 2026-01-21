@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+title Identity Linking (Account Authentication)
+actor "AI Agent" as Client
+actor "Account System" as AuthSystem
+rectangle "UCP Server" {
+    usecase "Discover OAuth Metadata\n(/.well-known/oauth-authorization-server)" as UC1
+    usecase "Link Account\n(OAuth 2.0 Flow)" as UC2
+    usecase "Create Checkout" as UC3
+}
+Client --> UC1: "1. Request Auth Metadata"
+Client --> UC2: "2. Initiate Account Linking"
+Client --> UC3: "3. Create Checkout"
+note on link
+  - Authorization: Bearer <access_token>
+end note
+UC2 --> AuthSystem: "Verify User & Issue Token"
+@enduml

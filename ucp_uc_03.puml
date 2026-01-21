@@ -1,0 +1,18 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+title Update Checkout
+actor "AI Agent" as Client
+actor "eStore Backend" as Backend
+rectangle "UCP Server" {
+    usecase "Update Checkout Session" as UC1
+}
+Client --> UC1: "1. Request Checkout update"
+note on link
+  - buyer
+  - line_items (수량 변경 등)
+  - payment (핸들러 선택)
+  - currency
+end note
+UC1 --> Backend: "2. Recalculate Totals & Validate Updates"
+@enduml
